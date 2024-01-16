@@ -1,0 +1,4 @@
+# Ignore all data stored
+# Assuming user does not want to check in files
+# that are managed by the web service
+*.xml
