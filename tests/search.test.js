@@ -4,7 +4,7 @@ const app = require('../index'); // assuming your server is exported from index.
 
 describe("Search XML file content", () => {
     it("should create an XML file, read it, then search for a term in it", async () => {
-        const filename = 'test';
+        const filename = 'testcasegenerated';
         const searchTerm = 'example';
         const filePath = `./xml/${filename}.xml`;
         const xmlContent = `<root><child>${searchTerm}</child></root>`;
