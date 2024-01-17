@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const fs = require('fs');
 const xml2js = require('xml2js');
+const readline = require('readline');
 
 const app = express();
 const port = 3000;
@@ -22,7 +23,7 @@ app.get('/read/:filename', (req, res) => {
   });
 });
 
-// Update or create XML file
+// Update or create XML file, if the file exists it will be overwritten
 app.post('/update/:filename', (req, res) => {
   const filename = req.params.filename;
   const filePath = `./xml/${filename}.xml`;
@@ -54,8 +55,35 @@ app.get('/search/:filename', (req, res) => {
         if (parseErr) {
           res.status(500).send('Error parsing XML');
         } else {
-          // Implement your search logic here based on the parsed XML
-          res.send(`Search results for ${searchTerm}: ${JSON.stringify(result)}`);
+          // Implement your search logic here based on the parsed XML    
+          async function searchInFile(filePath, searchTerm) {
+            const fileStream = fs.createReadStream(filePath);
+
+            const rl = readline.createInterface({
+              input: fileStream,
+              crlfDelay: Infinity
+            });
+
+            let lineNumber = 0;
+            let results = [];
+
+            for await (const line of rl) {
+              lineNumber++;
+              if (line.includes(searchTerm)) {
+                results.push({ lineNumber, line: line.toString() });
+              }
+            }
+
+            return results;
+          }
+
+          searchInFile(filePath, searchTerm)
+            .then(results => {
+              res.send(`Search results for ${searchTerm}: ${JSON.stringify(results)}`);
+            })
+            .catch(err => {
+              console.error(err);
+            });
         }
       });
     }
