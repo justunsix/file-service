@@ -1,6 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<root>
-    <test>Test content</test>
-    <test2>Hello World</test2>
-    <test>Test Third line</test>
-</root>
+<root><child>example</child></root>

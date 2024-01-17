@@ -9,6 +9,8 @@ const port = 3000;
 
 app.use(bodyParser.json());
 
+module.exports = app;
+
 // Read XML file
 app.get('/read/:filename', (req, res) => {
   const filename = req.params.filename;
