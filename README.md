@@ -24,7 +24,7 @@ Start the web service by running the following command:
 
 `node index.js`
 
-The service will be accessible at http://localhost:3000.
+The service will be accessible at <http://localhost:3000>.
 
 ## Usage
 
@@ -61,7 +61,6 @@ GET or put in your browser: `http://localhost:3000/read/test`. Note the file is 
 #### Search
 
 GET or put in your browser: `http://localhost:3000/search/test?term=Test`
-
 
 ## License
 
