@@ -34,15 +34,13 @@ To read the content of a file, make a GET request to:
 
 `http://localhost:3000/read/:filename`
 
-Replace :filename with the desired file name.
-
 ### Updating or Creating XML
 
 To update or create an file, make a POST request to:
 
 `http://localhost:3000/update/:filename`
 
-Replace :filename with the desired file name. Include the content in the request body.
+Replace :filename with the desired file name. Include the content in the request body. The update will overwrite an existing file.
 
 ### Searching XML Content
 
@@ -50,7 +48,20 @@ To search the content of an XML file, make a GET request to:
 
 `http://localhost:3000/search/:filename?term=your-search-term`
 
-Replace :filename with the desired XML file name and your-search-term with the term you want to search for.
+Replace `:filename` with the desired XML file name (for example `test` for search an xml file called `test.xml`) and `your-search-term` with the term you want to search for.
+
+### Example
+
+For the xml file called `test.xml`
+
+#### Read
+
+GET or put in your browser: `http://localhost:3000/read/test`. Note the file is an xml file but the GET request does not have the xml file extension.
+
+#### Search
+
+GET or put in your browser: `http://localhost:3000/search/test?term=Test`
+
 
 ## License
 
