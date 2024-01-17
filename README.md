@@ -15,6 +15,7 @@ Before you begin, ensure you have the following installed:
 - Navigate to the project directory
 
 - Install dependencies `npm install`
+- Update dependencies (optional for later) `npm update`
 
 ## Running the Service
 
@@ -62,7 +63,6 @@ GET or put in your browser: `http://localhost:3000/search/test?term=Test`
 
 ## Testing the Web Service
 
-- Make sure the web service is running with `node index.js`
 - Run `npm test`
 
 ## License
