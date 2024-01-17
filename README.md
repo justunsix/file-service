@@ -1,8 +1,6 @@
 # File Service
 
-Web service to manage, read, create, update, and delete XML files
-
-Basic web service for reading, updating, and searching files like XML files using Node.js and Express.
+Web service to manage XML files by reading, updating, and searching text in the files using Node.js and Express.
 
 ## Prerequisites
 
@@ -62,6 +60,11 @@ GET or put in your browser: `http://localhost:3000/read/test`. Note the file is 
 
 GET or put in your browser: `http://localhost:3000/search/test?term=Test`
 
+## Testing the Web Service
+
+- Make sure the web service is running with `node index.js`
+- Run `npm test`
+
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
@@ -75,7 +78,10 @@ npm init -y
 npm install express
 # Install web service dependencies
 npm install xml2js
-# Install testing dependencies
-npm install jest axios cheerio
+# Install testing dependencies for development environments only
+npm install --save-dev jest supertest
 # Create a directory called xml to store your files
+mkdir xml
 ```
+
+Tested using Node version 21.6.0
