@@ -9,7 +9,7 @@ const xmlContent = `
 `;
 
 // Define the filename
-const filename = 'testfile';
+const filename = 'test';
 
 // Define the test term
 const testTerm = 'Test content';
