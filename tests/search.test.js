@@ -16,7 +16,8 @@ describe("Search XML file content", () => {
         const data = await fs.promises.readFile(filePath, 'utf8');
 
         // Search for a term in the XML file
-        const res = await request(app)
+        await app.ready();
+        const res = await request(app.server)
             .get(`/search/${filename}`)
             .query({ term: searchTerm });
 
