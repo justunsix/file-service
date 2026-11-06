@@ -9,7 +9,7 @@ importers:
   .:
     dependencies:
       fastify:
-        specifier: ^5.12.7
+        specifier: ^5.12.6
         version: 5.12.7
       xml2js:
         specifier: ^0.6.2
